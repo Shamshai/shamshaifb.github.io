@@ -1,228 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shams Engineering Works</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel & Tin Shed Fabrication Experts</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+  <meta name="description" content="Steel & Tin Shed Fabrication Experts offering industrial, commercial and custom fabrication solutions." />
+  <meta name="keywords" content="fabrication, steel fabrication, tin shed, roofing sheet, puff panel, industrial fabrication" />
 
-body {
-  background: #0f172a;
-  color: #fff;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-/* HEADER */
-header {
-  background: #020617;
-  padding: 10px 15px;
-}
+    body {
+      color: #f9fafb;
+      background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+      url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80") no-repeat center/cover fixed;
+    }
 
-.header-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    header {
+      background: rgba(17,24,39,.9);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: transform 0.35s ease;
+    }
 
-.header-top img {
-  width: 45px;
-}
+    @media (max-width: 768px) {
+      header.hide {
+        transform: translateY(-100%);
+      }
+    }
 
-.brand {
-  font-size: 20px;
-  font-weight: bold;
-}
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-nav {
-  margin-top: 10px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  list-style: none;
-}
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-/* SECTIONS */
-section {
-  padding: 50px 20px;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
+    }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    nav a:hover {
+      color: #f59e0b;
+    }
 
-.section-title h2 {
-  color: #f59e0b;
-}
+    @media (min-width: 769px) {
+      nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
 
-/* SERVICES */
-.services-grid,
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-.card {
-  background: #020617;
-  border-radius: 10px;
-  overflow: hidden;
-}
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
 
-.card h3 {
-  padding: 15px;
-  text-align: center;
-}
+    .btn {
+      background: #f59e0b;
+      color: #000;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
 
-/* PROJECT LOGOS */
-.grid img {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  height: 140px;
-  object-fit: contain;
-}
+    section {
+      padding: 70px 40px;
+    }
 
-/* FOOTER */
-footer {
-  background: #020617;
-  text-align: center;
-  padding: 25px;
-}
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: rgba(17,24,39,.85);
+      border-radius: 14px;
+      padding: 50px;
+    }
 
-footer a {
-  color: #f59e0b;
-  text-decoration: none;
-  font-weight: bold;
-}
-</style>
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(31,41,55,.95);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #f59e0b;
+      margin-bottom: 10px;
+    }
+
+    .projects img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    footer a {
+      color: #f59e0b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media(max-width:768px){
+      .hero h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-top">
-    <img src="https://via.placeholder.com/100x100?text=LOGO" alt="Logo">
-    <div class="brand">Shams Engineering Works</div>
-  </div>
-
   <nav>
+    <div class="logo">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=200&q=80" alt="Fabrication Logo">
+      <h1>ABC Fabrication Works</h1>
+    </div>
+
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="contact-us.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section id="home">
-  <div class="section-title">
-    <h2>Welcome</h2>
+<section class="hero" id="home">
+  <div>
+    <h2>Steel & Tin Shed Fabrication Experts</h2>
+    <p>Industrial | Commercial | Custom Fabrication</p>
+    <a href="contact-us.html" class="btn">Request a Quote</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title"><h2>About Us</h2></div>
+    <p style="text-align:center;">
+      We provide reliable steel and metal fabrication services with precision,
+      safety, and timely execution across industrial and commercial projects.
+    </p>
   </div>
 </section>
 
 <section id="services">
-  <div class="section-title">
-    <h2>Our Services</h2>
-  </div>
+  <div class="container">
+    <div class="section-title"><h2>Our Services</h2></div>
 
-  <div class="services-grid">
+    <div class="grid">
 
-    <a href="#tinshed" class="card">
-      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" />
-      <h3>Tin Shed Work</h3>
-    </a>
+      <!-- Tin Shed FIRST + clickable -->
+      <a href="tin-shed.html" style="text-decoration:none;color:inherit;">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
+          <h3>Tin Shed Work</h3>
+          <p>Roofing sheet with PUF / puff panels</p>
+        </div>
+      </a>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581091870627-3b04f80eeb1f" />
-      <h3>Fabrication Work</h3>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1541976076758-347942db1975?auto=format&fit=crop&w=800&q=80">
+        <h3>Structural Steel</h3>
+        <p>Beams, columns, sheds and heavy structures.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80">
+        <h3>Industrial Fabrication</h3>
+        <p>Platforms, pipelines and machinery supports.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80">
+        <h3>Cutting & Welding</h3>
+        <p>MIG, TIG, plasma and arc welding services.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605007493699-af65834f8a00?auto=format&fit=crop&w=800&q=80">
+        <h3>Custom Metal Works</h3>
+        <p>Fabrication as per drawings & specifications.</p>
+      </div>
+
     </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41" />
-      <h3>Electrical Work</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581091870609-1e7e6e23c7c5" />
-      <h3>Interior & Flooring</h3>
-    </div>
-
   </div>
 </section>
 
 <section id="projects">
-  <div class="section-title">
-    <h2>Completed Projects</h2>
-  </div>
-
-  <h3 style="text-align:center; margin-bottom:15px;">IT Companies</h3>
-  <div class="grid">
-    <img src="https://logo.clearbit.com/amazon.com">
-    <img src="https://logo.clearbit.com/accenture.com">
-    <img src="https://logo.clearbit.com/google.com">
-    <img src="https://logo.clearbit.com/cisco.com">
-    <img src="https://logo.clearbit.com/ibm.com">
-    <img src="https://logo.clearbit.com/wipro.com">
-    <img src="https://logo.clearbit.com/microsoft.com">
-    <img src="https://logo.clearbit.com/nvidia.com">
-    <img src="https://logo.clearbit.com/wellsfargo.com">
-    <img src="https://logo.clearbit.com/infosys.com">
-    <img src="https://logo.clearbit.com/mediamint.com">
-    <img src="https://logo.clearbit.com/deloitte.com">
-    <img src="https://logo.clearbit.com/cyient.com">
-    <img src="https://logo.clearbit.com/xilinx.com">
-    <img src="https://logo.clearbit.com/hcltech.com">
-    <img src="https://logo.clearbit.com/whatsapp.com">
-    <img src="https://logo.clearbit.com/apple.com">
-    <img src="https://logo.clearbit.com/marvel.com">
-    <img src="https://logo.clearbit.com/salesforce.com">
-    <img src="https://logo.clearbit.com/qualcomm.com">
-    <img src="https://logo.clearbit.com/capgemini.com">
-  </div>
-
-  <h3 style="text-align:center; margin:40px 0 15px;">Contractor Companies</h3>
-  <div class="grid">
-    <img src="https://via.placeholder.com/400x200?text=ABS+Fujitsu+General">
-    <img src="https://via.placeholder.com/400x200?text=On+Sai+Intex+Interior">
-    <img src="https://via.placeholder.com/400x200?text=RK+Interior">
-    <img src="https://via.placeholder.com/400x200?text=GMAP+Infra+Project">
-    <img src="https://via.placeholder.com/400x200?text=Odd+Jobs+India+Pvt+Ltd">
-  </div>
-</section>
-
-<section id="contact">
-  <div class="section-title">
-    <h2>Contact Us</h2>
+  <div class="container projects">
+    <div class="section-title"><h2>Completed Projects</h2></div>
+    <div class="grid">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80">
+    </div>
   </div>
 </section>
 
 <footer>
-  📞 <a href="tel:+919999999999">+91 99999 99999</a>
+  © 2025 ABC Fabrication Works |
+  Call us: <a href="tel:+919731652936">+91 97316 52936</a>
 </footer>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth > 768) return;
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > 80) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
 
 </body>
 </html>
