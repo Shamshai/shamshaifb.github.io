@@ -3,47 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Fabrication Works</title>
   <title>Steel & Tin Shed Fabrication Experts</title>
 
   <!-- SEO -->
-  <meta name="description" content="Steel & Tin Shed Fabrication Experts offering industrial, commercial and custom fabrication solutions in Hyderabad." />
-  <meta name="keywords" content="steel fabrication, tin shed, roofing sheet, puff panel, fabrication Hyderabad" />
+  <meta name="description" content="Steel & Tin Shed Fabrication Experts offering industrial, commercial and custom fabrication solutions." />
+  <meta name="keywords" content="fabrication, steel fabrication, tin shed, roofing sheet, puff panel, industrial fabrication" />
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
     body {
       color: #f9fafb;
+      line-height: 1.6;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80')
+        no-repeat center center fixed;
+      background-size: cover;
       background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-      url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80")
-      no-repeat center/cover fixed;
+      url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80") no-repeat center/cover fixed;
     }
 
     header {
+      background: rgba(17,24,39,0.95);
       background: rgba(17,24,39,.9);
       padding: 20px 40px;
       position: sticky;
       top: 0;
-      z-index: 1000;
+@@ -37,25 +38,19 @@
+      flex-wrap: wrap;
     }
 
-    nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    nav h1 {
+      font-size: 24px;
+    }
 
-    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav a {
+      color: #f9fafb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
+    nav a:hover {
+      color: #f59e0b;
+    }
     nav a:hover { color: #f59e0b; }
 
     .hero {
       min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+@@ -66,114 +61,73 @@
       padding: 20px;
     }
 
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #e5e7eb;
+      margin-bottom: 20px;
+    }
     .hero h2 { font-size: 46px; margin-bottom: 15px; }
     .hero p { font-size: 20px; margin-bottom: 25px; }
 
@@ -54,20 +88,43 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
-      display: inline-block;
+      text-decoration: none;
     }
 
+    .btn:hover {
+      background: #d97706;
+    }
     section { padding: 70px 40px; }
 
+    section {
+      padding: 70px 40px;
+    }
+
+    .box {
     .container {
       max-width: 1200px;
       margin: auto;
+      background: rgba(17,24,39,0.9);
+      padding: 50px;
       background: rgba(17,24,39,.85);
       border-radius: 14px;
       padding: 50px;
     }
 
-    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+    }
+
+    .about p {
+      text-align: center;
+      color: #d1d5db;
+      font-size: 17px;
+    }
 
     .grid {
       display: grid;
@@ -76,6 +133,8 @@
     }
 
     .card {
+      background: rgba(31,41,55,0.95);
+      padding: 25px;
       background: rgba(31,41,55,.95);
       padding: 30px;
       border-radius: 12px;
@@ -83,6 +142,9 @@
       transition: .3s;
     }
 
+    .card h3 {
+      color: #f59e0b;
+      margin-bottom: 10px;
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(0,0,0,.4);
@@ -92,115 +154,159 @@
 
     .projects img {
       width: 100%;
+      height: auto;
       height: 190px;
       object-fit: cover;
       border-radius: 10px;
+      margin-bottom: 10px;
     }
 
-    .contact-details {
+    form {
+      max-width: 600px;
+      margin: auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 30px;
+      gap: 15px;
     }
 
-    .contact-box {
-      background: rgba(31,41,55,.95);
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .contact-box a {
-      color: #f59e0b;
-      text-decoration: none;
-      display: block;
-      margin-top: 8px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 260px;
-      border-radius: 12px;
-      border: 0;
+    input, textarea {
+      padding: 14px;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
     }
 
     footer {
       background: #000;
       text-align: center;
       padding: 25px;
+      background: rgba(0,0,0,0.9);
+      color: #9ca3af;
       margin-top: 60px;
       font-size: 14px;
       color: #9ca3af;
     }
 
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+      }
     @media(max-width:768px){
       .hero h2 { font-size: 32px; }
       nav ul { flex-direction: column; margin-top: 10px; }
-      .contact-details { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+@@ -202,61 +156,78 @@ <h2>Steel & Tin Shed Fabrication Experts</h2>
+</section>
 
-<body>
-
-<header>
-  <nav>
-    <h1>ABC Fabrication Works</h1>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero" id="home">
-  <div>
-    <h2>Steel & Tin Shed Fabrication Experts</h2>
-    <p>Industrial | Commercial | Custom Fabrication</p>
-    <a href="#contact" class="btn">Request a Quote</a>
+<section id="about">
+  <div class="box about">
+  <div class="container">
+    <div class="section-title"><h2>About Us</h2></div>
+    <p>
+      We provide high-quality steel and metal fabrication services with a strong
+      focus on safety, durability, and on-time delivery.
+    <p style="text-align:center;">
+      We provide reliable steel and metal fabrication services with precision,
+      safety, and timely execution across industrial and commercial projects.
+    </p>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
+<section id="services">
+  <div class="box">
   <div class="container">
-    <div class="section-title"><h2>Contact Us</h2></div>
-
-    <div class="contact-details">
-      <div class="contact-box">
-        <h3>Office Address</h3>
-        <p>
-          9-3-238 /1/1, Akbarpura Md Line,<br>
-          Toli Chowki, Hyderabad – 500008
-        </p>
-
-        <a target="_blank"
-          href="https://www.google.com/maps/search/?api=1&query=9-3-238+Akbarpura+Md+Line+Toli+Chowki+Hyderabad">
-          📍 Open in Google Maps
-        </a>
-
-        <h3 style="margin-top:20px;">Call / WhatsApp</h3>
-        <a href="https://wa.me/919731652936" target="_blank">💬 WhatsApp: 9731652936</a>
-        <a href="https://wa.me/919980027900" target="_blank">💬 WhatsApp: 9980027900</a>
-      </div>
-
-      <div class="contact-box">
-        <h3>Navigate to Us</h3>
-        <iframe
-          src="https://www.google.com/maps?q=9-3-238%20Akbarpura%20Md%20Line%20Toli%20Chowki%20Hyderabad&output=embed"
-          loading="lazy">
-        </iframe>
-      </div>
+    <div class="section-title"><h2>Our Services</h2></div>
+    <div class="grid">
+      <div class="card"><h3>Structural Steel</h3><p>Beams, columns, sheds.</p></div>
+      <div class="card"><h3>Industrial Fabrication</h3><p>Platforms and machinery supports.</p></div>
+      <div class="card"><h3>Cutting & Welding</h3><p>MIG, TIG & arc welding.</p></div>
+      <div class="card"><h3>Custom Metal Works</h3><p>As per drawings.</p></div>
     </div>
   </div>
 </section>
 
+<section id="projects">
+  <div class="box projects">
+    <div class="section-title"><h2>Completed Projects</h2></div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800" />
+        <h3>Warehouse Structure</h3>
+        <h3>Structural Steel</h3>
+        <p>Beams, columns, sheds and heavy structures.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" />
+        <h3>Industrial Platform</h3>
+        <h3>Industrial Fabrication</h3>
+        <p>Platforms, pipelines and machinery supports.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cutting & Welding</h3>
+        <p>MIG, TIG, plasma and arc welding services.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800" />
+        <h3>Custom Fabrication</h3>
+        <h3>Custom Metal Works</h3>
+        <p>Fabrication as per drawings & specifications.</p>
+      </div>
+
+      <!-- NEW LINKED SERVICE -->
+      <a href="tin-shed.html" style="text-decoration:none;color:inherit;">
+        <div class="card">
+          <h3>Tin Shed Work</h3>
+          <p>Roofing sheet with PUF / puff panels</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container projects">
+    <div class="section-title"><h2>Completed Projects</h2></div>
+
+    <div class="grid">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="box">
+  <div class="container">
+    <div class="section-title"><h2>Contact Us</h2></div>
+    <form onsubmit="event.preventDefault(); alert('Message sent successfully');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button class="btn">Send Message</button>
+    <form onsubmit="event.preventDefault();alert('Message sent!');"
+      style="display:grid;gap:15px;max-width:500px;margin:auto;">
+      <input placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button class="btn">Send</button>
+    </form>
+  </div>
+</section>
+
 <footer>
+  © 2025 ABC Fabrication Works
   © 2025 ABC Fabrication Works. All Rights Reserved.
 </footer>
 
 </body>
-</html>
