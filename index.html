@@ -1,237 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO BASICS -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABC Fabrication Works | Steel, Tin Shed & Roofing Solutions</title>
-  <meta name="description" content="ABC Fabrication Works offers steel fabrication, tin shed work, roofing sheets with puff panels, welding, and industrial fabrication services.">
-  <meta name="keywords" content="fabrication works, tin shed, roofing sheet, puff panels, steel fabrication, welding services">
-  <meta name="author" content="ABC Fabrication Works">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SOCIAL SEO -->
-  <meta property="og:title" content="ABC Fabrication Works">
-  <meta property="og:description" content="Professional Steel & Tin Shed Fabrication Services">
-  <meta property="og:type" content="website">
+<title>ABC Fabrication Works | Steel & Tin Shed Fabrication</title>
+<meta name="description" content="ABC Fabrication Works provides steel fabrication, tin shed work, roofing sheets with puff panels, and industrial fabrication services.">
+<meta name="keywords" content="fabrication works, tin shed, roofing sheet, puff panels, steel fabrication">
+<meta name="author" content="ABC Fabrication Works">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{
+  color:#f9fafb;
+  background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+  url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80')
+  center/cover no-repeat;
+}
 
-    body {
-      color: #f9fafb;
-      background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-      url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    }
+a{text-decoration:none;color:inherit}
 
-    a { text-decoration: none; color: inherit; }
+header{
+  background:#111827;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    /* HEADER */
-    header {
-      background: rgba(17,24,39,.95);
-      padding: 16px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav h1{color:#f59e0b}
 
-    nav h1 {
-      font-size: 22px;
-      color: #f59e0b;
-    }
+.menu{
+  display:flex;
+  gap:20px;
+}
 
-    .menu {
-      display: flex;
-      gap: 20px;
-    }
+.menu a:hover{color:#f59e0b}
 
-    .menu a:hover { color: #f59e0b; }
+.hamburger{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
 
-    .hamburger {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-    }
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
 
-    /* HERO */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
+.hero h2{font-size:44px;margin-bottom:15px}
+.hero p{font-size:20px;margin-bottom:25px;color:#e5e7eb}
 
-    .hero h2 {
-      font-size: 46px;
-      margin-bottom: 15px;
-    }
+.btn{
+  background:#f59e0b;
+  color:#000;
+  padding:14px 28px;
+  border-radius:6px;
+  font-weight:bold;
+  display:inline-block;
+}
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 25px;
-      color: #e5e7eb;
-    }
+section{padding:70px 40px}
 
-    .btn {
-      background: #f59e0b;
-      color: #000;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-weight: bold;
-      display: inline-block;
-    }
+.box{
+  max-width:1200px;
+  margin:auto;
+  background:rgba(17,24,39,.9);
+  padding:50px;
+  border-radius:14px;
+}
 
-    .btn:hover { background: #d97706; }
+h2{text-align:center;color:#f59e0b;margin-bottom:40px}
 
-    section {
-      padding: 70px 40px;
-      position: relative;
-      z-index: 1;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
 
-    .box {
-      max-width: 1200px;
-      margin: auto;
-      background: rgba(17,24,39,.9);
-      padding: 50px;
-      border-radius: 14px;
-    }
+.card{
+  background:#1f2937;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  transition:.3s;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #f59e0b;
-    }
+.card:hover{transform:translateY(-6px)}
 
-    /* SERVICES */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-      gap: 25px;
-    }
+footer{
+  background:#000;
+  color:#9ca3af;
+  text-align:center;
+  padding:20px;
+}
 
-    .card {
-      background: rgba(31,41,55,.95);
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      transition: .3s;
-    }
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  z-index:2000;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    /* MASONRY GALLERY */
-    .masonry {
-      column-count: 3;
-      column-gap: 15px;
-    }
-
-    .masonry img {
-      width: 100%;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.9);
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    /* CONTACT */
-    form {
-      display: grid;
-      gap: 15px;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input, textarea {
-      padding: 14px;
-      border-radius: 6px;
-      border: none;
-      font-size: 15px;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      z-index: 3000;
-    }
-
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      color: #9ca3af;
-    }
-
-    /* MOBILE */
-    @media(max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        background: rgba(17,24,39,.98);
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 20px;
-        border-radius: 10px;
-      }
-
-      .menu.show { display: flex; }
-      .hamburger { display: block; }
-      .hero h2 { font-size: 32px; }
-      .masonry { column-count: 1; }
-    }
-  </style>
+@media(max-width:768px){
+  .menu{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:20px;
+    background:#111827;
+    padding:20px;
+    border-radius:10px;
+  }
+  .menu.show{display:flex}
+  .hamburger{display:block}
+  .hero h2{font-size:30px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <h1>ABC Fabrication</h1>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="menu" id="menu">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+  <h1>ABC Fabrication</h1>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 </header>
 
 <section class="hero" id="home">
@@ -243,68 +158,62 @@
 </section>
 
 <section id="services">
-  <div class="box">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">Structural Steel</div>
-      <div class="card">Industrial Fabrication</div>
-      <div class="card">Cutting & Welding</div>
-      <div class="card">Custom Metal Works</div>
-      <div class="card">
-        <a href="tin-shed.html">Tin Shed & Puff Panels</a>
-      </div>
-    </div>
+<div class="box">
+<h2>Our Services</h2>
+<div class="grid">
+  <div class="card">Structural Steel</div>
+  <div class="card">Industrial Fabrication</div>
+  <div class="card">Cutting & Welding</div>
+  <div class="card">Custom Metal Works</div>
+  <div class="card">
+    Tin Shed & Roofing Sheets<br><br>
+    <a href="tin-shed.html" class="btn">View Details</a>
   </div>
+</div>
+</div>
 </section>
 
 <section id="projects">
-  <div class="box">
-    <h2>Our Projects</h2>
-    <div class="masonry">
-      <img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg" onclick="openLightbox(this)">
-      <img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg" onclick="openLightbox(this)">
-      <img src="Tin Shed work, Roofing sheet with puff panels/3rd.jpg" onclick="openLightbox(this)">
-      <img src="Tin Shed work, Roofing sheet with puff panels/5th.jpg" onclick="openLightbox(this)">
-      <img src="Tin Shed work, Roofing sheet with puff panels/6th.jpg" onclick="openLightbox(this)">
-      <img src="Tin Shed work, Roofing sheet with puff panels/8th.jpg" onclick="openLightbox(this)">
-      <img src="Tin Shed work, Roofing sheet with puff panels/9th.jpg" onclick="openLightbox(this)">
-    </div>
+<div class="box">
+<h2>Our Projects</h2>
+<div class="grid">
+  <div class="card">
+    <h3>Tin Shed & Roofing</h3>
+    <p>Industrial & commercial shed projects</p>
+    <a href="tin-shed.html" class="btn">View Project</a>
   </div>
+
+  <div class="card">
+    <h3>Steel Fabrication</h3>
+    <p>Heavy & light structural steel works</p>
+    <span class="btn">Coming Soon</span>
+  </div>
+</div>
+</div>
 </section>
 
 <section id="contact">
-  <div class="box">
-    <h2>Contact Us</h2>
-    <form>
-      <input placeholder="Name" required>
-      <input placeholder="Email" required>
-      <textarea placeholder="Message" required></textarea>
-      <button class="btn">Send</button>
-    </form>
-  </div>
+<div class="box">
+<h2>Contact Us</h2>
+<form style="max-width:500px;margin:auto;display:grid;gap:15px">
+  <input placeholder="Name" required>
+  <input placeholder="Email" required>
+  <textarea placeholder="Message" required></textarea>
+  <button class="btn">Send</button>
+</form>
+</div>
 </section>
 
 <footer>
-  © 2025 ABC Fabrication Works
+© 2025 ABC Fabrication Works
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-  <img id="lightboxImg">
-</div>
-
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">WhatsApp</a>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('show');
-  }
-
-  function openLightbox(img) {
-    document.getElementById('lightboxImg').src = img.src;
-    document.getElementById('lightbox').style.display = 'flex';
-  }
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
 </script>
 
 </body>
