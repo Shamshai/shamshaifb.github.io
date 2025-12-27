@@ -24,7 +24,7 @@
 
     header {
       background: rgba(17,24,39,.9);
-      padding: 15px 40px;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -39,8 +39,8 @@
 
     nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column; /* mobile-first */
+      gap: 10px;
     }
 
     .logo {
@@ -57,18 +57,29 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
-      flex-direction: row; /* FIXED: horizontal on all devices */
+      flex-wrap: wrap;          /* KEY FIX */
+      gap: 15px;
+      justify-content: flex-start;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     nav a:hover {
       color: #f59e0b;
+    }
+
+    /* Desktop layout unchanged */
+    @media (min-width: 769px) {
+      nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
     .hero {
@@ -138,11 +149,6 @@
       margin-bottom: 15px;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.4);
-    }
-
     .card h3 {
       color: #f59e0b;
       margin-bottom: 10px;
@@ -183,9 +189,10 @@
 <header>
   <nav>
     <div class="logo">
-      <img src="https://via.placeholder.com/80x40?text=LOGO" alt="ABC Fabrication Logo">
+      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=200&q=80" alt="ABC Fabrication Logo">
       <h1>ABC Fabrication Works</h1>
     </div>
+
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -232,19 +239,19 @@
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80">
         <h3>Cutting & Welding</h3>
         <p>MIG, TIG, plasma and arc welding services.</p>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9b9e12?auto=format&fit=crop&w=800&q=80">
         <h3>Custom Metal Works</h3>
         <p>Fabrication as per drawings & specifications.</p>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9b9e12?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
         <h3>Tin Shed Work</h3>
         <p>Roofing sheet with PUF / puff panels</p>
       </div>
