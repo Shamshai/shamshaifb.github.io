@@ -29,6 +29,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      transition: transform 0.35s ease;
+    }
+
+    /* Hide header on scroll (mobile only) */
+    @media (max-width: 768px) {
+      header.hide {
+        transform: translateY(-100%);
+      }
     }
 
     nav {
@@ -38,12 +46,14 @@
       flex-wrap: wrap;
     }
 
-    /* Updated Horizontal Navigation Menu */
+    nav h1 {
+      font-size: 24px;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
-      flex-direction: row; /* horizontal on desktop */
     }
 
     nav a {
@@ -52,11 +62,13 @@
       font-weight: bold;
     }
 
-    nav a:hover { color: #f59e0b; }
+    nav a:hover {
+      color: #f59e0b;
+    }
 
     @media(max-width:768px){
       nav ul {
-        flex-direction: column; /* stack vertically on mobile */
+        flex-direction: column;
         margin-top: 10px;
       }
     }
@@ -70,8 +82,15 @@
       padding: 20px;
     }
 
-    .hero h2 { font-size: 46px; margin-bottom: 15px; }
-    .hero p { font-size: 20px; margin-bottom: 25px; }
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
 
     .btn {
       background: #f59e0b;
@@ -82,7 +101,9 @@
       border-radius: 6px;
     }
 
-    section { padding: 70px 40px; }
+    section {
+      padding: 70px 40px;
+    }
 
     .container {
       max-width: 1200px;
@@ -116,7 +137,10 @@
       box-shadow: 0 10px 25px rgba(0,0,0,.4);
     }
 
-    .card h3 { color: #f59e0b; margin-bottom: 10px; }
+    .card h3 {
+      color: #f59e0b;
+      margin-bottom: 10px;
+    }
 
     .projects img {
       width: 100%;
@@ -135,7 +159,9 @@
     }
 
     @media(max-width:768px){
-      .hero h2 { font-size: 32px; }
+      .hero h2 {
+        font-size: 32px;
+      }
     }
   </style>
 </head>
@@ -165,7 +191,9 @@
 
 <section id="about">
   <div class="container">
-    <div class="section-title"><h2>About Us</h2></div>
+    <div class="section-title">
+      <h2>About Us</h2>
+    </div>
     <p style="text-align:center;">
       We provide reliable steel and metal fabrication services with precision,
       safety, and timely execution across industrial and commercial projects.
@@ -175,7 +203,9 @@
 
 <section id="services">
   <div class="container">
-    <div class="section-title"><h2>Our Services</h2></div>
+    <div class="section-title">
+      <h2>Our Services</h2>
+    </div>
 
     <div class="grid">
       <div class="card">
@@ -210,7 +240,9 @@
 
 <section id="projects">
   <div class="container projects">
-    <div class="section-title"><h2>Completed Projects</h2></div>
+    <div class="section-title">
+      <h2>Completed Projects</h2>
+    </div>
 
     <div class="grid">
       <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80">
@@ -223,6 +255,26 @@
 <footer>
   © 2025 ABC Fabrication Works. All Rights Reserved.
 </footer>
+
+<!-- Mobile auto hide/show navbar -->
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth > 768) return;
+
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 80) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
 
 </body>
 </html>
