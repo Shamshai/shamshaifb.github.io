@@ -38,12 +38,18 @@
       flex-wrap: wrap;
     }
 
-    /* Updated Horizontal Navigation Menu */
     nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
       flex-direction: row; /* horizontal on desktop */
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline-block; /* ensure horizontal layout on desktop */
     }
 
     nav a {
@@ -54,10 +60,13 @@
 
     nav a:hover { color: #f59e0b; }
 
+    /* MOBILE FIX */
     @media(max-width:768px){
       nav ul {
         flex-direction: column; /* stack vertically on mobile */
+        gap: 10px; /* reduce spacing for mobile */
         margin-top: 10px;
+        align-items: flex-start; /* align links to left */
       }
     }
 
