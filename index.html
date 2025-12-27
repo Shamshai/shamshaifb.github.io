@@ -1,123 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABC Fabrication Works</title>
+  <!-- SEO BASICS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Fabrication Works | Steel, Tin Shed & Roofing Solutions</title>
+  <meta name="description" content="ABC Fabrication Works offers steel fabrication, tin shed work, roofing sheets with puff panels, welding, and industrial fabrication services.">
+  <meta name="keywords" content="fabrication works, tin shed, roofing sheet, puff panels, steel fabrication, welding services">
+  <meta name="author" content="ABC Fabrication Works">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{
-color:#f9fafb;
-background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-url('https://images.unsplash.com/photo-1581090700227-1e37b190418e') center/cover fixed
-}
-header{background:#111827e6;padding:20px 40px;position:sticky;top:0}
-nav{display:flex;justify-content:space-between;align-items:center}
-nav ul{display:flex;gap:20px;list-style:none}
-nav a{color:#fff;text-decoration:none;font-weight:bold}
-nav a:hover{color:#f59e0b}
+  <!-- SOCIAL SEO -->
+  <meta property="og:title" content="ABC Fabrication Works">
+  <meta property="og:description" content="Professional Steel & Tin Shed Fabrication Services">
+  <meta property="og:type" content="website">
 
-.hero{min-height:85vh;display:flex;justify-content:center;align-items:center;text-align:center}
-.hero h2{font-size:46px;margin-bottom:15px}
-.hero p{font-size:20px;margin-bottom:25px}
-.btn{background:#f59e0b;color:#000;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:bold}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-section{padding:70px 40px}
-.section-title{text-align:center;margin-bottom:45px}
-.section-title h2{font-size:34px}
+    body {
+      color: #f9fafb;
+      background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+      url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
 
-.about,.services{max-width:1200px;margin:auto;background:#111827d9;padding:50px;border-radius:14px}
+    a { text-decoration: none; color: inherit; }
 
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px
-}
-.card{
-background:#1f2937f2;
-padding:30px;
-border-radius:12px;
-text-align:center;
-transition:.3s
-}
-.card:hover{transform:translateY(-8px)}
-.card h3{color:#f59e0b;margin-bottom:10px}
-.card a{text-decoration:none;color:#fff;display:block}
+    /* HEADER */
+    header {
+      background: rgba(17,24,39,.95);
+      padding: 16px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-footer{text-align:center;padding:25px;background:#000;margin-top:60px}
-</style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-size: 22px;
+      color: #f59e0b;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a:hover { color: #f59e0b; }
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #e5e7eb;
+    }
+
+    .btn {
+      background: #f59e0b;
+      color: #000;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .btn:hover { background: #d97706; }
+
+    section {
+      padding: 70px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .box {
+      max-width: 1200px;
+      margin: auto;
+      background: rgba(17,24,39,.9);
+      padding: 50px;
+      border-radius: 14px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #f59e0b;
+    }
+
+    /* SERVICES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(31,41,55,.95);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* MASONRY GALLERY */
+    .masonry {
+      column-count: 3;
+      column-gap: 15px;
+    }
+
+    .masonry img {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* CONTACT */
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 14px;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      z-index: 3000;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #9ca3af;
+    }
+
+    /* MOBILE */
+    @media(max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(17,24,39,.98);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .menu.show { display: flex; }
+      .hamburger { display: block; }
+      .hero h2 { font-size: 32px; }
+      .masonry { column-count: 1; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<nav>
-<h1>ABC Fabrication Works</h1>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-</ul>
-</nav>
+  <nav>
+    <h1>ABC Fabrication</h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <section class="hero" id="home">
-<div>
-<h2>Precision Steel & Metal Fabrication</h2>
-<p>Trusted Industrial & Commercial Solutions</p>
-<a href="#services" class="btn">Our Services</a>
-</div>
-</section>
-
-<section id="about">
-<div class="about">
-<div class="section-title"><h2>About Us</h2></div>
-<p>We deliver high-quality steel and metal fabrication with safety and precision.</p>
-</div>
+  <div>
+    <h2>Steel & Tin Shed Fabrication Experts</h2>
+    <p>Industrial | Commercial | Custom Fabrication</p>
+    <a href="#contact" class="btn">Get Quote</a>
+  </div>
 </section>
 
 <section id="services">
-<div class="services">
-<div class="section-title"><h2>Our Services</h2></div>
+  <div class="box">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">Structural Steel</div>
+      <div class="card">Industrial Fabrication</div>
+      <div class="card">Cutting & Welding</div>
+      <div class="card">Custom Metal Works</div>
+      <div class="card">
+        <a href="tin-shed.html">Tin Shed & Puff Panels</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="services-grid">
+<section id="projects">
+  <div class="box">
+    <h2>Our Projects</h2>
+    <div class="masonry">
+      <img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg" onclick="openLightbox(this)">
+      <img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg" onclick="openLightbox(this)">
+      <img src="Tin Shed work, Roofing sheet with puff panels/3rd.jpg" onclick="openLightbox(this)">
+      <img src="Tin Shed work, Roofing sheet with puff panels/5th.jpg" onclick="openLightbox(this)">
+      <img src="Tin Shed work, Roofing sheet with puff panels/6th.jpg" onclick="openLightbox(this)">
+      <img src="Tin Shed work, Roofing sheet with puff panels/8th.jpg" onclick="openLightbox(this)">
+      <img src="Tin Shed work, Roofing sheet with puff panels/9th.jpg" onclick="openLightbox(this)">
+    </div>
+  </div>
+</section>
 
-<div class="card">
-<h3>Structural Steel</h3>
-<p>Beams, columns, sheds & heavy structures.</p>
-</div>
-
-<div class="card">
-<h3>Industrial Fabrication</h3>
-<p>Platforms, pipelines & machinery supports.</p>
-</div>
-
-<div class="card">
-<h3>Cutting & Welding</h3>
-<p>MIG, TIG, Arc welding & plasma cutting.</p>
-</div>
-
-<div class="card">
-<h3>Custom Metal Works</h3>
-<p>Fabrication as per drawings & specs.</p>
-</div>
-
-<!-- ✅ NEW SERVICE -->
-<div class="card">
-<a href="tin-shed.html">
-<h3>Tin Shed Work</h3>
-<p>Roofing sheets & PUFF panel installations</p>
-</a>
-</div>
-
-</div>
-</div>
+<section id="contact">
+  <div class="box">
+    <h2>Contact Us</h2>
+    <form>
+      <input placeholder="Name" required>
+      <input placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button class="btn">Send</button>
+    </form>
+  </div>
 </section>
 
 <footer>
-<p>© 2025 ABC Fabrication Works</p>
+  © 2025 ABC Fabrication Works
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+  <img id="lightboxImg">
+</div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/919999999999" target="_blank">WhatsApp</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('show');
+  }
+
+  function openLightbox(img) {
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+</script>
 
 </body>
 </html>
