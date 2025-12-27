@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | ABC Fabrication Works</title>
+
+<!-- WhatsApp icon CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; background: #111827; color: #fff; margin: 0; }
+  header { background: #000; padding: 15px 30px; }
+  header a { color: #f59e0b; text-decoration: none; font-weight: bold; }
+  section { padding: 60px 30px; }
+  h1 { text-align: center; color: #f59e0b; margin-bottom: 40px; }
+  .contact-container { max-width: 800px; margin: auto; background: rgba(17,24,39,.9); padding: 30px; border-radius: 12px; }
+  .contact-info { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+  .contact-item { display: flex; align-items: center; gap: 15px; font-size: 18px; }
+  .contact-item a { color: #f59e0b; text-decoration: none; font-weight: bold; }
+  .contact-item a:hover { text-decoration: underline; }
+  .whatsapp-icon { color: #25D366; font-size: 22px; }
+  iframe { width: 100%; height: 300px; border: 0; border-radius: 10px; }
+  form { display: grid; gap: 15px; margin-top: 30px; }
+  input, textarea, button { padding: 12px; border-radius: 6px; border: none; font-size: 16px; }
+  input, textarea { width: 100%; }
+  button { background: #f59e0b; color: #000; font-weight: bold; cursor: pointer; }
+  button:hover { background: #d97706; }
+  @media(max-width:768px){ .contact-info { gap: 15px; } }
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">← Back to Home</a>
+</header>
+
+<section>
+  <h1>Contact Us</h1>
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>9-3-238 /1/1 Akbarpura Md Line, Toli Chowki, Hyderabad - 500008</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:9731652936">9731652936</a>
+        <a href="https://wa.me/919731652936" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i></a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:9980027900">9980027900</a>
+        <a href="https://wa.me/919980027900" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i></a>
+      </div>
+    </div>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.243470299947!2d78.44806677455044!3d17.36861128805651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9130d3b32fbf%3A0x8fefc4a061d928df!2sAkbarpura%2C%20Toli%20Chowki%2C%20Hyderabad%2C%20Telangana%20500008!5e0!3m2!1sen!2sin!4v1703701443740!5m2!1sen!2sin" 
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
