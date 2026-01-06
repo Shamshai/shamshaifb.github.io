@@ -7,89 +7,80 @@
 <title>ABC Fabrication | Steel & Tin Shed Experts</title>
 <meta name="description" content="Steel fabrication, tin shed roofing, industrial structures & custom metal works in Hyderabad.">
 
-<!-- SEO LocalBusiness Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "ABC Fabrication Works",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "9-3-238 /1/1 Akbarpura Md Line, Toli Chowki",
-    "addressLocality": "Hyderabad",
-    "addressRegion": "Telangana",
-    "postalCode": "500008",
-    "addressCountry": "IN"
-  },
-  "telephone": "+91-9731652936",
-  "sameAs": ["https://wa.me/919731652936"]
-}
-</script>
-
 <style>
 /* ================= GLOBAL ================= */
-*,*::before,*::after{box-sizing:border-box;}
-html,body{width:100%;overflow-x:hidden;margin:0;font-family:Arial,sans-serif;color:#fff;transition:background 0.6s ease;}
-
-/* ================= BACKGROUNDS ================= */
-body.bg-tinshed{
-  background: linear-gradient(135deg,#020617,#0f172a),
-  repeating-linear-gradient(135deg,rgba(255,255,255,0.03) 0 1px,transparent 1px 6px);
+*{box-sizing:border-box;}
+body{
+  margin:0;font-family:Arial,sans-serif;
+  background:#020617;color:#fff;
 }
-body.bg-structural{
-  background:#020617,
-  repeating-linear-gradient(90deg,rgba(245,158,11,0.08) 0 1px,transparent 1px 40px),
-  repeating-linear-gradient(0deg,rgba(245,158,11,0.08) 0 1px,transparent 1px 40px);
-}
-body.bg-corporate{
-  background:linear-gradient(135deg,#020617,#020617),
-  radial-gradient(circle at top right,rgba(245,158,11,.25),transparent 35%);
-}
+h1,h2{text-align:center;color:#f59e0b;margin-bottom:24px;}
 
 /* ================= HEADER ================= */
 header{
   position:sticky;top:0;z-index:1000;
-  background:rgba(0,0,0,.8);
+  background:rgba(0,0,0,.85);
   padding:14px 20px;
   display:flex;justify-content:space-between;align-items:center;
 }
-nav{display:flex;flex-wrap:wrap;}
-nav a{color:#fff;margin-left:16px;text-decoration:none;font-weight:bold;}
+nav a{
+  color:#fff;margin-left:16px;
+  text-decoration:none;font-weight:bold;
+}
 nav a:hover{color:#f59e0b;}
 
 /* ================= MAIN ================= */
-.main-content{padding-top:90px;}
 section{padding:60px 16px;}
-h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 
-/* ================= SLIDER ================= */
-.slider-container{
-  max-width:1100px;margin:auto;
-  background:rgba(255,255,255,.08);
-  padding:20px;border-radius:18px;
-  backdrop-filter:blur(14px);
-  position:relative;
+/* ================= CARD SCROLL GALLERY ================= */
+.gallery-wrapper{
+  max-width:1200px;
+  margin:auto;
+  overflow-x:auto;
+  display:flex;
+  gap:18px;
+  padding:10px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
 }
-.slides{display:flex;transition:transform .6s ease;}
-.slide{min-width:100%;display:flex;justify-content:center;}
-.slide img{
-  max-width:100%;
-  max-height:460px;
-  object-fit:contain;
+.gallery-wrapper::-webkit-scrollbar{display:none;}
+
+.gallery-card{
+  min-width:280px;
+  max-width:280px;
+  height:200px;
   background:#020617;
-  border-radius:12px;
+  border-radius:16px;
+  overflow:hidden;
+  scroll-snap-align:start;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  cursor:pointer;
+  transition:transform .3s ease;
 }
-.slider-btn{
-  position:absolute;top:50%;
-  transform:translateY(-50%);
-  background:#000c;color:#fff;
-  border:none;font-size:26px;
-  padding:8px 12px;border-radius:50%;
+.gallery-card:hover{transform:scale(1.05);}
+
+.gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
-.prev{left:8px;} .next{right:8px;}
-.dots{display:flex;justify-content:center;gap:10px;margin-top:14px;}
-.dot{width:10px;height:10px;background:#6b7280;border-radius:50%;cursor:pointer;}
-.dot.active{background:#f59e0b;}
+
+/* ================= POPUP MODAL ================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.modal img{
+  max-width:92%;
+  max-height:92%;
+  border-radius:14px;
+}
 
 /* ================= CONTACT ================= */
 .contact-box{
@@ -104,78 +95,55 @@ h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 .contact-box button{
   background:#f59e0b;color:#000;
   padding:12px 18px;border:none;
-  border-radius:6px;font-weight:bold;cursor:pointer;
+  border-radius:6px;font-weight:bold;
 }
 
-/* ================= MAP FIX ================= */
+/* ================= MAP ================= */
 .map-iframe{
   width:100%;
-  height:400px;
+  height:350px;
   border:0;
   border-radius:16px;
-  display:block;
-}
-@media(max-width:768px){
-  .map-iframe{height:300px;}
+  margin-top:30px;
 }
 
-/* ================= FLOATING BUTTONS ================= */
+/* ================= FLOATING ================= */
 .whatsapp{
   position:fixed;right:18px;bottom:18px;
   width:56px;height:56px;
   background:#25D366;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:26px;z-index:9999;
-}
-.call-btn{display:none;}
-
-@media(max-width:768px){
-  header{flex-direction:column;align-items:flex-start;}
-  .slide img{max-height:260px;}
-  .main-content{padding-top:120px;}
-  .call-btn{
-    display:flex;position:fixed;
-    left:18px;bottom:18px;
-    background:#f59e0b;color:#000;
-    padding:14px 18px;border-radius:40px;
-    font-weight:bold;text-decoration:none;z-index:9999;
-  }
+  font-size:26px;z-index:999;
 }
 </style>
 </head>
 
-<body class="bg-tinshed">
+<body>
 
 <header>
   <strong>ABC Fabrication</strong>
   <nav>
-    <a href="#" onclick="setBG('bg-tinshed')">Tin Shed</a>
-    <a href="#" onclick="setBG('bg-structural')">Structural</a>
-    <a href="#" onclick="setBG('bg-corporate')">Corporate</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<div class="main-content">
-
-<section>
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
 <h1>Tin Shed & Roofing Projects</h1>
-<div class="slider-container">
-  <div class="slides" id="slides">
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/3rd.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/5th.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/6th.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/8th.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/9th.jpg"></div>
-  </div>
-  <button class="slider-btn prev" onclick="move(-1)">❮</button>
-  <button class="slider-btn next" onclick="move(1)">❯</button>
-  <div class="dots" id="dots"></div>
+
+<div class="gallery-wrapper">
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg"></div>
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg"></div>
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/3rd.jpg"></div>
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/5th.jpg"></div>
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/6th.jpg"></div>
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/8th.jpg"></div>
+  <div class="gallery-card"><img src="Tin Shed work, Roofing sheet with puff panels/9th.jpg"></div>
 </div>
 </section>
 
+<!-- ================= CONTACT ================= -->
 <section id="contact">
 <h2>Contact Us</h2>
 
@@ -189,40 +157,31 @@ h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 <iframe
   class="map-iframe"
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.243470299947!2d78.44806677455044!3d17.36861128805651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9130d3b32fbf%3A0x8fefc4a061d928df!2sAkbarpura%2C%20Toli%20Chowki%2C%20Hyderabad%2C%20Telangana%20500008!5e0!3m2!1sen!2sin!4v1703701443740!5m2!1sen!2sin"
-  allowfullscreen
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
+  loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
-
 </section>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+  <img id="modalImg">
 </div>
 
 <a class="whatsapp" href="https://wa.me/919731652936" target="_blank">🟢</a>
-<a class="call-btn" href="tel:9731652936">📞 Call</a>
 
 <script>
-function setBG(cls){document.body.className=cls;}
+/* ===== IMAGE POPUP ===== */
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
 
-let i=0;
-const slides=document.getElementById("slides");
-const total=slides.children.length;
-const dots=document.getElementById("dots");
+document.querySelectorAll(".gallery-card img").forEach(img=>{
+  img.onclick=()=>{
+    modal.style.display="flex";
+    modalImg.src=img.src;
+  }
+});
+modal.onclick=()=>modal.style.display="none";
 
-for(let d=0;d<total;d++){
-  const dot=document.createElement("div");
-  dot.className="dot";
-  dot.onclick=()=>{i=d;update();}
-  dots.appendChild(dot);
-}
-
-function update(){
-  slides.style.transform=`translateX(-${i*100}%)`;
-  document.querySelectorAll(".dot")
-    .forEach((d,x)=>d.classList.toggle("active",x===i));
-}
-function move(n){i=(i+n+total)%total;update();}
-update();
-
+/* ===== WHATSAPP ===== */
 function sendWhatsApp(){
   const text=`Name:${name.value}%0APhone:${phone.value}%0AMessage:${msg.value}`;
   window.open(`https://wa.me/919731652936?text=${text}`,'_blank');
