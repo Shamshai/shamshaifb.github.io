@@ -5,226 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ABC Fabrication | Steel & Tin Shed Experts</title>
-
 <meta name="description" content="Steel fabrication, tin shed roofing, industrial structures & custom metal works in Hyderabad.">
 
+<!-- SEO LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ABC Fabrication Works",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "9-3-238 /1/1 Akbarpura Md Line, Toli Chowki",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500008",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-9731652936",
+  "sameAs": ["https://wa.me/919731652936"]
+}
+</script>
+
 <style>
-/* ================= GLOBAL SAFETY ================= */
-*,
-*::before,
-*::after{
-  box-sizing:border-box;
-}
-
-html, body{
-  width:100%;
-  overflow-x:hidden; /* 🔒 HARD STOP horizontal scroll */
-}
-
-/* ================= BASE ================= */
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:#fff;
-  transition:background 0.6s ease;
-}
+/* ================= GLOBAL ================= */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{width:100%;overflow-x:hidden;margin:0;font-family:Arial,sans-serif;color:#fff;transition:background 0.6s ease;}
 
 /* ================= BACKGROUNDS ================= */
 body.bg-tinshed{
-  background:
-    linear-gradient(135deg,#020617,#0f172a),
-    repeating-linear-gradient(135deg,rgba(255,255,255,0.03) 0 1px,transparent 1px 6px);
+  background: linear-gradient(135deg,#020617,#0f172a), repeating-linear-gradient(135deg,rgba(255,255,255,0.03) 0 1px,transparent 1px 6px);
 }
-
 body.bg-structural{
-  background:
-    #020617,
-    repeating-linear-gradient(90deg,rgba(245,158,11,0.08) 0 1px,transparent 1px 40px),
-    repeating-linear-gradient(0deg,rgba(245,158,11,0.08) 0 1px,transparent 1px 40px);
+  background: #020617, repeating-linear-gradient(90deg,rgba(245,158,11,0.08) 0 1px,transparent 1px 40px), repeating-linear-gradient(0deg,rgba(245,158,11,0.08) 0 1px,transparent 1px 40px);
 }
-
 body.bg-corporate{
-  background:
-    linear-gradient(135deg,#020617,#020617),
-    radial-gradient(circle at top right,rgba(245,158,11,.25),transparent 35%);
+  background: linear-gradient(135deg,#020617,#020617), radial-gradient(circle at top right,rgba(245,158,11,.25),transparent 35%);
 }
 
-/* ================= HEADER ================= */
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(0,0,0,.8);
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  width:100%;
-}
+/* ================= HEADER & NAV ================= */
+header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.8);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;}
+nav{display:flex;flex-wrap:wrap;}
+nav a{color:#fff;margin-left:16px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#f59e0b;}
 
-nav{
-  display:flex;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:#fff;
-  margin-left:16px;
-  text-decoration:none;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-nav a:hover{ color:#f59e0b; }
-
-/* ================= SAFE OFFSET FOR STICKY HEADER ================= */
-.main-content{
-  padding-top:90px; /* 🔑 prevents heading overlap */
-}
-
-/* ================= SECTION ================= */
-section{
-  padding:60px 16px;
-}
-
-h1,h2{
-  text-align:center;
-  color:#f59e0b;
-  margin:0 0 30px;
-}
+/* ================= MAIN ================= */
+.main-content{padding-top:90px;}
+section{padding:60px 16px;}
+h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 
 /* ================= SLIDER ================= */
-.slider-container{
-  max-width:1100px;
-  margin:0 auto;
-  background:rgba(255,255,255,.08);
-  padding:20px;
-  border-radius:18px;
-  backdrop-filter:blur(14px);
-  position:relative;
-}
-
-.slides{
-  display:flex;
-  transition:transform .6s ease;
-  width:100%;
-}
-
-.slide{
-  min-width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-/* 🔒 IMAGE FULLY CONTAINED */
-.slide img{
-  max-width:100%;
-  max-height:460px;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  background:#020617;
-  border-radius:12px;
-}
-
-/* ================= SLIDER BUTTONS ================= */
-.slider-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:#000c;
-  color:#fff;
-  border:none;
-  font-size:26px;
-  padding:8px 12px;
-  border-radius:50%;
-  cursor:pointer;
-}
-
-.prev{ left:8px; }
-.next{ right:8px; }
-
-/* ================= DOTS ================= */
-.dots{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:14px;
-}
-
-.dot{
-  width:10px;
-  height:10px;
-  background:#6b7280;
-  border-radius:50%;
-}
-
-.dot.active{ background:#f59e0b; }
+.slider-container{max-width:1100px;margin:auto;background:rgba(255,255,255,.08);padding:20px;border-radius:18px;backdrop-filter:blur(14px);position:relative;}
+.slides{display:flex;transition:.6s;}
+.slide{min-width:100%;display:flex;justify-content:center;}
+.slide img{max-width:100%;max-height:460px;object-fit:contain;background:#020617;border-radius:12px;}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:#000c;color:#fff;border:none;font-size:26px;padding:8px 12px;border-radius:50%;}
+.prev{left:8px;} .next{right:8px;}
+.dots{display:flex;justify-content:center;gap:10px;margin-top:14px;}
+.dot{width:10px;height:10px;background:#6b7280;border-radius:50%;}
+.dot.active{background:#f59e0b;}
 
 /* ================= CONTACT ================= */
-.contact-box{
-  max-width:600px;
-  margin:0 auto;
-  background:rgba(255,255,255,.08);
-  padding:26px;
-  border-radius:16px;
-}
+.contact-box{max-width:600px;margin:auto;background:rgba(255,255,255,.08);padding:26px;border-radius:16px;}
+.contact-box input,.contact-box textarea{width:100%;padding:12px;margin-bottom:14px;border-radius:6px;border:none;}
+.contact-box button{background:#f59e0b;color:#000;padding:12px 18px;border:none;border-radius:6px;font-weight:bold;cursor:pointer;}
+.map-iframe{margin-top:32px;border-radius:16px;overflow:hidden;}
 
-.contact-box input,
-.contact-box textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:14px;
-  border-radius:6px;
-  border:none;
-}
-
-/* ================= MAP ================= */
-.map{
-  margin-top:32px;
-  border-radius:16px;
-  overflow:hidden;
-}
-
-/* ================= WHATSAPP FLOAT ================= */
-.whatsapp{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:56px;
-  height:56px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  color:#fff;
-  text-decoration:none;
-  z-index:9999;
-}
+/* ================= FLOATING BUTTONS ================= */
+.whatsapp{position:fixed;right:18px;bottom:18px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;z-index:9999;}
+.call-btn{display:none;}
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-  header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:8px;
-  }
-
-  nav a{
-    margin-left:0;
-    margin-right:12px;
-  }
-
-  .slide img{
-    max-height:260px;
-  }
-
-  .main-content{
-    padding-top:120px; /* extra safety on mobile */
-  }
+  header{flex-direction:column;align-items:flex-start;}
+  .slide img{max-height:260px;}
+  .main-content{padding-top:120px;}
+  .call-btn{display:flex;position:fixed;left:18px;bottom:18px;background:#f59e0b;color:#000;padding:14px 18px;border-radius:40px;font-weight:bold;text-decoration:none;z-index:9999;}
 }
 </style>
 </head>
@@ -243,27 +98,26 @@ h1,h2{
 
 <div class="main-content">
 
+<!-- ================= SLIDER SECTION ================= -->
 <section>
 <h1>Tin Shed & Roofing Projects</h1>
-
 <div class="slider-container">
   <div class="slides" id="slides">
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/3rd.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/5th.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/6th.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/8th.jpg"></div>
-    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/9th.jpg"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg" alt="Project 1"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg" alt="Project 2"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/3rd.jpg" alt="Project 3"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/5th.jpg" alt="Project 5"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/6th.jpg" alt="Project 6"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/8th.jpg" alt="Project 8"></div>
+    <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/9th.jpg" alt="Project 9"></div>
   </div>
-
   <button class="slider-btn prev" onclick="move(-1)">❮</button>
   <button class="slider-btn next" onclick="move(1)">❯</button>
-
   <div class="dots" id="dots"></div>
 </div>
 </section>
 
+<!-- ================= CONTACT SECTION ================= -->
 <section id="contact">
 <h2>Contact Us</h2>
 
@@ -274,44 +128,48 @@ h1,h2{
   <button onclick="sendWhatsApp()">Send via WhatsApp</button>
 </div>
 
-<div class="map">
-<iframe
-  src="https://www.google.com/maps?q=9-3-238/1/1%20Akbarpura%20Md%20Line%20Toli%20Chowki%20Hyderabad%20500008&output=embed"
-  width="100%" height="300" style="border:0;" loading="lazy">
+<!-- Updated Map from Code 2 -->
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.243470299947!2d78.44806677455044!3d17.36861128805651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9130d3b32fbf%3A0x8fefc4a061d928df!2sAkbarpura%2C%20Toli%20Chowki%2C%20Hyderabad%2C%20Telangana%20500008!5e0!3m2!1sen!2sin!4v1703701443740!5m2!1sen!2sin" 
+  width="100%" height="400" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
+
+<div style="text-align:center;margin-top:16px;">
+  <input id="origin" placeholder="Enter your location" style="width:60%;padding:8px;border-radius:6px;border:none;">
+  <button class="directions-btn" onclick="calculateRoute()">Get Directions</button>
 </div>
+
 </section>
-
 </div>
 
+<!-- ================= FLOATING BUTTONS ================= -->
 <a class="whatsapp" href="https://wa.me/919731652936" target="_blank">🟢</a>
+<a class="call-btn" href="tel:9731652936">📞 Call</a>
 
 <script>
-function setBG(cls){ document.body.className = cls; }
+// ================= BACKGROUND =================
+function setBG(cls){document.body.className=cls;}
 
-let i=0;
-const slides=document.getElementById("slides");
-const total=slides.children.length;
-const dots=document.getElementById("dots");
-
-for(let d=0;d<total;d++){
-  const dot=document.createElement("div");
-  dot.className="dot";
-  dot.onclick=()=>go(d);
-  dots.appendChild(dot);
+// ================= SLIDER =================
+let i=0,slides=document.getElementById("slides"),total=slides.children.length,dots=document.getElementById("dots");
+for(let d=0; d<total; d++){
+ let dot=document.createElement("div");
+ dot.className="dot";
+ dot.onclick=()=>go(d);
+ dots.appendChild(dot);
 }
-
 function update(){
-  slides.style.transform=`translateX(-${i*100}%)`;
-  document.querySelectorAll(".dot").forEach((d,x)=>d.classList.toggle("active",x===i));
+ slides.style.transform=`translateX(-${i*100}%)`;
+ document.querySelectorAll(".dot").forEach((d,x)=>d.classList.toggle("active",x===i));
 }
-function move(n){ i=(i+n+total)%total; update(); }
-function go(n){ i=n; update(); }
+function move(n){i=(i+n+total)%total;update();}
+function go(n){i=n;update();}
 update();
 
+// ================= WHATSAPP =================
 function sendWhatsApp(){
-  const text=`Name: ${name.value}%0APhone: ${phone.value}%0AMessage: ${msg.value}`;
-  window.open(`https://wa.me/919731652936?text=${text}`,'_blank');
+ const text=`Name:${document.getElementById("name").value}%0APhone:${document.getElementById("phone").value}%0AMessage:${document.getElementById("msg").value}`;
+ window.open(`https://wa.me/919731652936?text=${text}`,'_blank');
 }
 </script>
 
