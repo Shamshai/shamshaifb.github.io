@@ -1,197 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Steel & Tin Shed Fabrication Experts</title>
 
-<title>ABC Fabrication</title>
+<meta name="description" content="Steel & Tin Shed Fabrication Experts offering industrial, commercial and custom fabrication solutions." />
+<meta name="keywords" content="fabrication, steel fabrication, tin shed, roofing sheet, puff panel, industrial fabrication" />
 
 <style>
 /* ================= THEME VARIABLES ================= */
 :root{
-  --bg:#020617;
-  --text:#ffffff;
-  --card:rgba(255,255,255,.08);
-  --accent:#f59e0b;
+  --bg-overlay: rgba(0,0,0,.75);
+  --bg-card: rgba(17,24,39,.85);
+  --bg-card-dark: rgba(31,41,55,.95);
+  --text: #f9fafb;
+  --accent: #f59e0b;
 }
 .light{
-  --bg:#ffffff;
-  --text:#000000;
-  --card:#f2f2f2;
-  --accent:#000000;
+  --bg-overlay: rgba(255,255,255,.85);
+  --bg-card: #ffffff;
+  --bg-card-dark: #f3f4f6;
+  --text: #000000;
+  --accent: #000000;
 }
 
 /* ================= GLOBAL ================= */
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--bg);
   color:var(--text);
+  background:
+    linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+    url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center/cover fixed;
   transition:.3s;
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
 }
 
 /* ================= HEADER ================= */
 header{
+  background:rgba(17,24,39,.9);
+  padding:15px 20px;
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(0,0,0,.85);
-  padding:14px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  transition:.35s;
 }
 .light header{
   background:#ffffff;
   border-bottom:1px solid #ddd;
 }
-.logo{
-  font-size:20px;
-  font-weight:bold;
+nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
-.logo a{
-  color:var(--text);
-  text-decoration:none;
+@media(min-width:769px){
+  nav{flex-direction:row;justify-content:space-between;align-items:center}
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logo img{height:40px}
+nav ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
 }
 nav a{
   color:var(--text);
   text-decoration:none;
-  margin-left:22px;
   font-weight:bold;
 }
 nav a:hover{color:var(--accent)}
 
-/* ================= THEME TOGGLE ================= */
+/* THEME TOGGLE */
 .theme-toggle{
   background:none;
   border:none;
   font-size:22px;
   cursor:pointer;
   color:var(--text);
-  margin-left:16px;
 }
 
-/* ================= FULL WIDTH SLIDER ================= */
-.slider{
-  width:100vw;
-  height:75vh;
-  overflow:hidden;
-  position:relative;
-}
-.slides{
+/* ================= HERO ================= */
+.hero{
+  min-height:85vh;
   display:flex;
-  height:100%;
-  transition:.5s ease;
-}
-.slide{
-  min-width:100vw;
-}
-.slide img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  cursor:pointer;
-}
-.slider-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,.6);
-  color:#fff;
-  border:none;
-  font-size:28px;
-  padding:10px 16px;
-  cursor:pointer;
-}
-.prev{left:10px}
-.next{right:10px}
-
-/* ================= POPUP ================= */
-.popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  display:none;
   align-items:center;
   justify-content:center;
-  z-index:9999;
-}
-.popup img{
-  max-width:95%;
-  max-height:90%;
-  border-radius:12px;
-}
-
-/* ================= CONTACT ================= */
-section{
-  padding:60px 20px;
-}
-h2{
   text-align:center;
-  color:var(--accent);
+  padding:20px;
 }
-.contact-wrapper{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-.contact-box,.map-card{
-  background:var(--card);
-  padding:26px;
-  border-radius:16px;
-}
-.contact-box input,
-.contact-box textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:14px;
-  border:none;
-  border-radius:6px;
-}
-.contact-box button{
-  width:100%;
+.hero h2{font-size:46px;margin-bottom:15px}
+.hero p{font-size:20px;margin-bottom:25px}
+.btn{
   background:var(--accent);
   color:#000;
-  padding:12px;
+  padding:14px 28px;
+  text-decoration:none;
   font-weight:bold;
-  border:none;
   border-radius:6px;
 }
 
-/* ================= MAP ================= */
-.map-iframe{
-  width:100%;
-  height:100%;
-  min-height:350px;
-  border:0;
+/* ================= SECTIONS ================= */
+section{padding:70px 40px}
+.container{
+  max-width:1200px;
+  margin:auto;
+  background:var(--bg-card);
+  border-radius:14px;
+  padding:50px;
+}
+.section-title{text-align:center;margin-bottom:40px}
+
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+.card{
+  background:var(--bg-card-dark);
+  padding:20px;
   border-radius:12px;
+  text-align:center;
+}
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+.card h3{color:var(--accent);margin-bottom:10px}
+
+/* ================= PROJECTS ================= */
+.projects img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
 /* ================= FOOTER ================= */
 footer{
+  background:#000;
   text-align:center;
-  padding:16px;
-  background:rgba(0,0,0,.8);
-  color:#fff;
+  padding:25px;
+  margin-top:60px;
   font-size:14px;
-  margin-top:auto;
+  color:#9ca3af;
 }
 footer a{
   color:#f59e0b;
   text-decoration:none;
   font-weight:bold;
 }
-footer a:hover{
-  text-decoration:underline;
-}
 
-/* ================= FLOATING ================= */
+/* ================= FLOATING ICONS ================= */
 .whatsapp,.call{
   position:fixed;
   bottom:20px;
@@ -206,12 +175,12 @@ footer a:hover{
   z-index:9999;
 }
 .whatsapp{right:20px;background:#25D366;color:#fff}
-.call{left:20px;background:var(--accent);color:#000}
+.call{left:20px;background:#f59e0b;color:#000}
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-  .slider{height:55vh}
-  .contact-wrapper{grid-template-columns:1fr}
+  .hero h2{font-size:32px}
+  header.hide{transform:translateY(-100%)}
 }
 </style>
 </head>
@@ -219,103 +188,108 @@ footer a:hover{
 <body>
 
 <header>
-  <div class="logo">
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html">
-      ABC Fabrication
-    </a>
-  </div>
-
   <nav>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html">Home</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html#about">About</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html#services">Services</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html#projects">)Projects</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/contact-us.html">Contact us</a>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <div class="logo">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=200&q=80">
+      <h1>ABC Fabrication Works</h1>
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="contact-us.html">Contact</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+    </ul>
   </nav>
 </header>
 
-<!-- ================= SLIDER ================= -->
-<div class="slider">
-  <div class="slides" id="slides">
-    <div class="slide"><img src="Hall Planters/1st.jpg"></div>
-    <div class="slide"><img src="Hall Planters/2nd.jpg"></div>
-    <div class="slide"><img src="Hall Planters/3rd.jpg"></div>
-    <div class="slide"><img src="Hall Planters/4th.jpg"></div>
-    <div class="slide"><img src="Hall Planters/5th.jpg"></div>
-    <div class="slide"><img src="Hall Planters/6th.jpg"></div>
+<section class="hero" id="home">
+  <div>
+    <h2>Steel & Tin Shed Fabrication Experts</h2>
+    <p>Industrial | Commercial | Custom Fabrication</p>
+    <a href="contact-us.html" class="btn">Request a Quote</a>
   </div>
-  <button class="slider-btn prev" onclick="move(-1)">❮</button>
-  <button class="slider-btn next" onclick="move(1)">❯</button>
-</div>
-
-<!-- POPUP -->
-<div class="popup" id="popup" onclick="this.style.display='none'">
-  <img id="popupImg">
-</div>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact">
-<h2>Contact Us</h2>
-
-<div class="contact-wrapper">
-  <div class="contact-box">
-    <input placeholder="Your Name">
-    <input placeholder="Phone / WhatsApp">
-    <textarea placeholder="Project Details"></textarea>
-    <button>Send via WhatsApp</button>
-  </div>
-
-  <div class="map-card">
-    <iframe class="map-iframe" loading="lazy"
-      src="https://www.google.com/maps?q=17.368611,78.448067&z=16&output=embed">
-    </iframe>
-  </div>
-</div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<section id="about">
+  <div class="container">
+    <div class="section-title"><h2>About Us</h2></div>
+    <p style="text-align:center">
+      We provide reliable steel and metal fabrication services with precision,
+      safety, and timely execution across industrial and commercial projects.
+    </p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title"><h2>Our Services</h2></div>
+    <div class="grid">
+
+      <a href="tin-shed.html" style="text-decoration:none;color:inherit">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
+          <h3>Tin Shed Work</h3>
+          <p>Roofing sheet with PUF panels</p>
+        </div>
+      </a>
+
+ <a href="hall-planters.html" style="text-decoration:none;color:inherit">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1541976076758-347942db1975?auto=format&fit=crop&w=800&q=80">
+        <h3>Hall Planters</h3>
+        <p>Heavy steel structures</p>
+      </div>
+</a>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80">
+        <h3>Fancy Towel Hangers</h3>
+        <p>Custom metal accessories</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container projects">
+    <div class="section-title"><h2>Completed Projects</h2></div>
+    <div class="grid">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80">
+    </div>
+  </div>
+</section>
+
 <footer>
   © 2025 ABC Fabrication Works |
   Call us: <a href="tel:+919731652936">+91 97316 52936</a>
 </footer>
 
-<!-- ================= FLOATING BUTTONS ================= -->
+<!-- FLOATING ICONS -->
 <a class="whatsapp" href="https://wa.me/919731652936">🟢</a>
 <a class="call" href="tel:9731652936">📞</a>
 
 <script>
-/* Slider */
-let i=0;
-const slides=document.getElementById("slides");
-const total=slides.children.length;
-function move(n){
-  i=(i+n+total)%total;
-  slides.style.transform=`translateX(-${i*100}vw)`;
-}
-
-/* Swipe */
-let startX=0;
-slides.addEventListener("touchstart",e=>startX=e.touches[0].clientX);
-slides.addEventListener("touchend",e=>{
-  let diff=e.changedTouches[0].clientX-startX;
-  if(diff>50)move(-1);
-  if(diff<-50)move(1);
+/* Header hide on scroll (mobile) */
+let lastScrollTop=0;
+const header=document.querySelector("header");
+window.addEventListener("scroll",()=>{
+  if(window.innerWidth>768)return;
+  let st=window.pageYOffset||document.documentElement.scrollTop;
+  header.classList.toggle("hide",st>lastScrollTop&&st>80);
+  lastScrollTop=st<=0?0:st;
 });
 
-/* Popup */
-document.querySelectorAll(".slide img").forEach(img=>{
-  img.onclick=()=>{
-    popupImg.src=img.src;
-    popup.style.display="flex";
-  }
-});
-
-/* Theme Toggle */
+/* Theme toggle */
 function toggleTheme(){
   document.body.classList.toggle("light");
-  document.querySelector(".theme-toggle").textContent =
-    document.body.classList.contains("light") ? "☀" : "🌙";
+  document.querySelector(".theme-toggle").textContent=
+    document.body.classList.contains("light")?"☀":"🌙";
 }
 </script>
 
