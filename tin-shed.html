@@ -54,15 +54,21 @@ section{padding:60px 16px;}
 h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 
 /* ================= SLIDER ================= */
-.slider-container{max-width:1100px;margin:auto;background:rgba(255,255,255,.08);padding:20px;border-radius:18px;backdrop-filter:blur(14px);position:relative;}
-.slides{display:flex;transition:.6s;}
-.slide{min-width:100%;display:flex;justify-content:center;}
+.slider-container{max-width:1100px;margin:auto;background:rgba(255,255,255,.08);padding:20px;border-radius:18px;backdrop-filter:blur(14px);position:relative;overflow:hidden;}
+.slides{display:flex;transition:.5s ease;}
+.slide{min-width:100%;display:flex;justify-content:center;margin-right:10px;cursor:pointer;}
 .slide img{max-width:100%;max-height:460px;object-fit:contain;background:#020617;border-radius:12px;}
-.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:#000c;color:#fff;border:none;font-size:26px;padding:8px 12px;border-radius:50%;}
+
+/* Buttons & Dots */
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:#000c;color:#fff;border:none;font-size:26px;padding:8px 12px;border-radius:50%;cursor:pointer;}
 .prev{left:8px;} .next{right:8px;}
 .dots{display:flex;justify-content:center;gap:10px;margin-top:14px;}
-.dot{width:10px;height:10px;background:#6b7280;border-radius:50%;}
+.dot{width:10px;height:10px;background:#6b7280;border-radius:50%;cursor:pointer;}
 .dot.active{background:#f59e0b;}
+
+/* ================= POPUP ================= */
+.popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;justify-content:center;align-items:center;z-index:9999;display:none;}
+.popup img{max-width:90%;max-height:90%;border-radius:12px;}
 
 /* ================= CONTACT ================= */
 .contact-box{max-width:600px;margin:auto;background:rgba(255,255,255,.08);padding:26px;border-radius:16px;}
@@ -101,7 +107,7 @@ h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 <!-- ================= SLIDER SECTION ================= -->
 <section>
 <h1>Tin Shed & Roofing Projects</h1>
-<div class="slider-container">
+<div class="slider-container" id="slider-container">
   <div class="slides" id="slides">
     <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/1st.jpg" alt="Project 1"></div>
     <div class="slide"><img src="Tin Shed work, Roofing sheet with puff panels/2nd.jpg" alt="Project 2"></div>
@@ -117,6 +123,11 @@ h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
 </div>
 </section>
 
+<!-- ================= POPUP IMAGE ================= -->
+<div class="popup" id="popup">
+  <img src="" alt="Popup Image">
+</div>
+
 <!-- ================= CONTACT SECTION ================= -->
 <section id="contact">
 <h2>Contact Us</h2>
@@ -128,7 +139,7 @@ h1,h2{text-align:center;color:#f59e0b;margin-bottom:30px;}
   <button onclick="sendWhatsApp()">Send via WhatsApp</button>
 </div>
 
-<!-- Updated Map from Code 2 -->
+<!-- Updated Map -->
 <iframe 
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.243470299947!2d78.44806677455044!3d17.36861128805651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9130d3b32fbf%3A0x8fefc4a061d928df!2sAkbarpura%2C%20Toli%20Chowki%2C%20Hyderabad%2C%20Telangana%20500008!5e0!3m2!1sen!2sin!4v1703701443740!5m2!1sen!2sin" 
   width="100%" height="400" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -165,6 +176,20 @@ function update(){
 function move(n){i=(i+n+total)%total;update();}
 function go(n){i=n;update();}
 update();
+
+// ================= DRAG / SWIPE =================
+let isDown=false,startX,x;
+slides.addEventListener('mousedown', e => { isDown=true; startX=e.pageX; });
+slides.addEventListener('mousemove', e => { if(!isDown) return; x=e.pageX; });
+slides.addEventListener('mouseup', e => { if(!isDown) return; isDown=false; if(startX-x>50) move(1); if(startX-x<-50) move(-1); });
+
+// ================= POPUP IMAGE =================
+const popup=document.getElementById("popup");
+const popupImg=popup.querySelector("img");
+slides.querySelectorAll('img').forEach(img=>{
+  img.addEventListener('click',()=>{ popupImg.src=img.src; popup.style.display='flex'; });
+});
+popup.addEventListener('click',()=>{ popup.style.display='none'; });
 
 // ================= WHATSAPP =================
 function sendWhatsApp(){
