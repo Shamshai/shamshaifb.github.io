@@ -29,6 +29,9 @@ body{
   background:var(--bg);
   color:var(--text);
   transition:.3s;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* ================= HEADER ================= */
@@ -93,8 +96,6 @@ nav a:hover{color:var(--accent)}
   object-fit:cover;
   cursor:pointer;
 }
-
-/* Buttons */
 .slider-btn{
   position:absolute;
   top:50%;
@@ -172,6 +173,24 @@ h2{
   border-radius:12px;
 }
 
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:16px;
+  background:rgba(0,0,0,.8);
+  color:#fff;
+  font-size:14px;
+  margin-top:auto;
+}
+footer a{
+  color:#f59e0b;
+  text-decoration:none;
+  font-weight:bold;
+}
+footer a:hover{
+  text-decoration:underline;
+}
+
 /* ================= FLOATING ================= */
 .whatsapp,.call{
   position:fixed;
@@ -208,10 +227,7 @@ h2{
 
   <nav>
     <a href="https://shamshai.github.io/shamshaifb.github.io/index.html">Home</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html#about">About</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html#services">Services</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/index.html#projects">Projects</a>
-    <a href="https://shamshai.github.io/shamshaifb.github.io/contact-us.html">Contact us</a>
+    <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
@@ -230,7 +246,7 @@ h2{
   <button class="slider-btn next" onclick="move(1)">❯</button>
 </div>
 
-<!-- Popup -->
+<!-- POPUP -->
 <div class="popup" id="popup" onclick="this.style.display='none'">
   <img id="popupImg">
 </div>
@@ -255,7 +271,13 @@ h2{
 </div>
 </section>
 
-<!-- Floating -->
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2025 ABC Fabrication Works |
+  Call us: <a href="tel:+919731652936">+91 97316 52936</a>
+</footer>
+
+<!-- ================= FLOATING BUTTONS ================= -->
 <a class="whatsapp" href="https://wa.me/919731652936">🟢</a>
 <a class="call" href="tel:9731652936">📞</a>
 
